@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap');
+
+:root {
+    --ff: 'Poppins', sans-serif;
+    --transition: all 0.3s linear;
+    --clr-red: #ec3948;
+    --clr-blue: #43c1fc;
+    --clr-green: #39ec99;
+}
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #cdcdcd;
+    min-height: 100vh;
+    font-family: var(--ff);
+}
+
+.wrap{
+    margin: 0 auto;
+    max-width: 35rem;
+    margin-top: 8rem;
+    background: #222;
+    color: #eee;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 1em;
+    padding: 1.2rem 2rem 1.8rem;
+}
+thead{
+    background: #222;
+    color: #eee;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 1.2rem 2rem 1.8rem;
+}
+.title {
+    text-align: center;
+    margin-bottom: .7rem;
+}
+
+.control {
+    display: flex;
+    justify-content: center;
+}
+
+#entry,textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    outline: none;
+    display: block;
+    border: 1px solid #eee;
+    background: #222;
+    color: #eee;
+    border-radius: 0.5rem ;
+    font-size: 1rem;
+    padding: 0.3rem 0.7rem;
+    flex: 1;
+    font-family: var(--ff);
+}
+
+.btn {
+    font-family: var(--ff);
+    font-weight: bold;
+}
+
+.submit-btn{
+    outline: none;
+    border: 1px solid #eee;
+    color: #222;
+    background-color: #eee;
+    font-size: .9rem;
+    padding: 0.3rem 0.7rem;
+    flex: 0 0 .5rem;
+    cursor: pointer;
+    transition: all .2s,
+    color .2s;
+}
+.plus{
+    display: none;
+    transition: all ease-in-out 0.3s;
+}
+.submit-btn:hover {
+    border: 1px solid #eee;
+    background-color: #222;
+    color: #eee;
+}
+.submit-btn:hover .add{
+    display: none;
+}
+.submit-btn:hover .plus{
+    display: block;
+}
+
+/* todo list*/
+
+
+
+

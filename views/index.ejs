@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD db</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <section>
+        <div class="container mx-auto py-4">
+            <form id="form" autocomplete="off" action="/addData" method="post" enctype="multipart/form-data">
+                <div class="w-1/2 wrap">
+                    <h3 class="title text-[30px] font-extrabold my-5">Movie Project</h3>
+                    <div class="">
+                        <label>Choose Poster <span class="text-red-700">*</span></label>
+                        <input type="file" name="path" id="entry">
+                        <label>Movie Name <span class="text-red-700">*</span></label>
+                        <input type="text" name="movieName" id="entry" placeholder="e.g. salaar ">
+                        <label>Ticket Price <span class="text-red-700">*</span></label>
+                        <input type="number" name="price" id="entry" placeholder="e.g. 200/- ... ">
+                        <label>Seat No <span class="text-red-700">*</span></label>
+                        <input type="number" name="seatNo" id="entry" placeholder="e.g. 29... ">
+                        <label>Seat Holder Name <span class="text-red-700">*</span></label>
+                        <input type="text" name="name" id="entry" placeholder="e.g. jay,raj ... ">
+                        <label>Mobile No <span class="text-red-700">*</span></label>
+                        <input type="number" name="mobileNo" id="entry" placeholder="e.g.  9876543210 ... ">
+                        <label>Payment Methods <span class="text-red-700">*</span></label>
+                        <input type="text" name="method" id="entry" placeholder="e.g.  card,cash ... ">
+                        <label>Movie Details <span class="text-red-700">*</span></label>
+                        <textarea name="other" id="address" class="px-[0.7rem] py-[0.3rem]"
+                            placeholder="movie Details ..."></textarea>
+
+                        <button type="submit"
+                            class="btn submit-btn block w-full rounded-lg py-2 mt-6 text-blck font-extrabold">Submit</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+    <section class="py-[100px]">
+        <h2 class="font-extrabold text-[30px] text-center">View Data</h2>
+        <div class="container mx-auto mt-5">
+            <div class="flex justify-center">
+                <% data.forEach((rec,index)=>{ %>
+                    <div class="w-3/12 text-center">
+                        <div
+                            class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <a href="#">
+                                <img class="rounded-t-lg" src="<%= rec.path %>" alt="" />
+                            </a>
+                            <div class="p-5">
+                                <a href="#">
+                                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                        <%=rec.movieName%>
+                                    </h5>
+                                </a>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                    <%=rec.price%>
+                                </p>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                    <%=rec.name%>
+                                </p>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                    <%=rec.mobileNo%>
+                                </p>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                    <%=rec.method%>
+                                </p>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                    <%=rec.other%>
+                                </p>
+                                <a href="/editData/<%= rec._id %>"
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    Edit
+                                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                    </svg>
+                                </a>
+                                <a href="/deleteData/<%= rec._id %>"
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    Delete
+                                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+        
+
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
