@@ -39,13 +39,7 @@ const editData = async (req, res) => {
 const updateData = async (req, res) => {
     let { id } = req.params;
     console.log("ok", req.body);
-    if (req.path) {
-        fs.unlink(update.path, (err) => {
-            console.log(err);
-        })
-        console.log("delete privuse path...");
 
-    }
 
     const update = await models.findByIdAndUpdate(
         { _id: id },
@@ -64,6 +58,13 @@ const updateData = async (req, res) => {
     );
     if (req.file) {
         update.path = req.file.path
+    }
+    if (req.path) {
+        fs.unlink(update.path, (err) => {
+            console.log(err);
+        })
+        console.log("delete previose path...");
+
     }
     const updateMovie = await models.findByIdAndUpdate(id, update, { new: true });
 

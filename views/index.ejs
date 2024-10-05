@@ -27,7 +27,7 @@
                         <input type="number" name="price" id="entry" placeholder="e.g. 200/- ... ">
                         <label>Seat No <span class="text-red-700">*</span></label>
                         <input type="number" name="seatNo" id="entry" placeholder="e.g. 29... ">
-                        <label>Seat Holder Name <span class="text-red-700">*</span></label>
+                        <label>Hero Name <span class="text-red-700">*</span></label>
                         <input type="text" name="name" id="entry" placeholder="e.g. jay,raj ... ">
                         <label>Mobile No <span class="text-red-700">*</span></label>
                         <input type="number" name="mobileNo" id="entry" placeholder="e.g.  9876543210 ... ">
@@ -54,8 +54,8 @@
                     <div class="w-3/12 text-center">
                         <div
                             class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <a href="#">
-                                <img class="rounded-t-lg" src="<%= rec.path %>" alt="" />
+                            <a href="javascript:void(0)">
+                                <img src="<%= rec.path %>" class="rounded-t-lg" alt="poster" />
                             </a>
                             <div class="p-5">
                                 <a href="#">
@@ -64,16 +64,12 @@
                                     </h5>
                                 </a>
                                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                    <b>Ticket Price :</b>
                                     <%=rec.price%>
                                 </p>
                                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                    <b>Hero Name :</b>
                                     <%=rec.name%>
-                                </p>
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                    <%=rec.mobileNo%>
-                                </p>
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                    <%=rec.method%>
                                 </p>
                                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                                     <%=rec.other%>
@@ -100,7 +96,7 @@
                         </div>
                     </div>
                     <% }) %>
-        
+
 
 
             </div>

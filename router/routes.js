@@ -7,7 +7,7 @@ const router = express.Router();
 router.get("/", controller.localHost);
 router.post("/addData", upload.single("path"), controller.addData);
 router.get("/editData/:id", controller.editData);
-router.post("/updateData/:id",controller.updateData);
+router.post("/updateData/:id",upload.single("path"),controller.updateData);
 router.get("/deleteData/:id", controller.deleteData);
 
 module.exports = router;
