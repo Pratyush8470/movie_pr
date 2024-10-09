@@ -22,7 +22,7 @@ body {
     font-family: var(--ff);
 }
 
-.wrap{
+.wrap {
     margin: 0 auto;
     max-width: 35rem;
     margin-top: 8rem;
@@ -32,12 +32,14 @@ body {
     border-radius: 1em;
     padding: 1.2rem 2rem 1.8rem;
 }
-thead{
+
+thead {
     background: #222;
     color: #eee;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     padding: 1.2rem 2rem 1.8rem;
 }
+
 .title {
     text-align: center;
     margin-bottom: .7rem;
@@ -48,7 +50,8 @@ thead{
     justify-content: center;
 }
 
-#entry,textarea {
+#entry,
+textarea {
     width: 100%;
     margin-bottom: 10px;
     outline: none;
@@ -56,7 +59,7 @@ thead{
     border: 1px solid #eee;
     background: #222;
     color: #eee;
-    border-radius: 0.5rem ;
+    border-radius: 0.5rem;
     font-size: 1rem;
     padding: 0.3rem 0.7rem;
     flex: 1;
@@ -68,7 +71,7 @@ thead{
     font-weight: bold;
 }
 
-.submit-btn{
+.submit-btn {
     outline: none;
     border: 1px solid #eee;
     color: #222;
@@ -78,26 +81,98 @@ thead{
     flex: 0 0 .5rem;
     cursor: pointer;
     transition: all .2s,
-    color .2s;
+        color .2s;
 }
-.plus{
+
+.plus {
     display: none;
     transition: all ease-in-out 0.3s;
 }
+
 .submit-btn:hover {
     border: 1px solid #eee;
     background-color: #222;
     color: #eee;
 }
-.submit-btn:hover .add{
+
+.submit-btn:hover .add {
     display: none;
 }
-.submit-btn:hover .plus{
+
+.submit-btn:hover .plus {
     display: block;
 }
 
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btns a {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background:  #222;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    background:  #222;
+}
+
+.btns a,
+.btns,
+a span {
+    transition: 200ms;
+}
+
+.btns a .text {
+    transform: translateX(15px);
+    color: white;
+    font-weight: bold;
+}
+
+.btns a .icon {
+    position: absolute;
+    border-left: 1px solid #ffffff;
+    transform: translateX(110px);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btns a svg {
+    width: 15px;
+    fill: #eee;
+}
+
+.btns a:hover {
+    background: #ff3636;
+}
+.btns .edit:hover {
+    background: #1b6cbd;
+}
+
+.btns a:hover .text {
+    color: transparent;
+}
+
+.btns a:hover .icon {
+    width: 150px;
+    border-left: none;
+    transform: translateX(0);
+}
+
+.btns a:focus {
+    outline: none;
+}
+
 /* todo list*/
-
-
-
-
